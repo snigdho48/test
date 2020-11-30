@@ -1,0 +1,154 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    {% block Title %}
+
+    {% endblock %}
+
+  </title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  {% block stylesheet %}
+
+  {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style-2.css' %}">
+
+</head>
+
+<body>
+  
+  <div class="header">
+    <div id="wrapper">
+    <div id="sidebar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="col-lg-1">
+
+        </div>
+        <ul class="navbar-nav col-lg-8 First">
+          <li class="nav-item {% block act1 %}{% endblock %}">
+            <a class="nav-link " href="{% url 'index'%}">Enterprise<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item {% block act2 %}{% endblock %}">
+            <a class="nav-link" href="{% url 'essential'%}">Essential</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ">
+          <li class="nav-item last">
+            <a class="nav-link nav-fr" href="#">+880</a>
+          </li>
+          <li class="nav-item last {% block act3 %}{% endblock %}">
+            <a class="nav-link nav-fr" href="{% url 'Help' %}">Help center</a>
+          </li>
+          <li class="nav-item last {% block act4 %}{% endblock %}">
+            <a class="nav-link nav-fr" href="{% url 'Signin' %}">Log in</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div></div>
+  {% block content %}
+
+
+  {% endblock %}
+
+
+
+  <footer class="page-footer font-small indigo col-lg">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md mx-auto">
+          <h4 class="footer-nav-heading">Sell Online</h4>
+          <ul class="list-unstyled">
+            <li><a href="/essentials/features/" title="Features">Features</a></li>
+            <li><a href="/essentials/pricing/" title="Pricing">Pricing</a></li>
+            <li><a href="/showcase/" title="Ecommerce Stores">Ecommerce Stores</a></li>
+            <li><a href="/blog/enterprise-ecommerce-platforms/">Enterprise Ecommerce</a></li>
+            <li><a href="https://www.bigcommerce.com/shopping-cart/" title="Shopping Cart">Shopping Cart</a></li>
+            <li><a href="/blog/best-ecommerce-website-design/" title="Ecommerce Design">Ecommerce Design</a></li>
+            <li><a href="https://www.bigcommerce.com/essentials/amazon/" title="Sell on Amazon">Sell on Amazon</a></li>
+            <li><a href="https://www.bigcommerce.com/essentials/facebook/" title="Sell on Facebook">Sell on Facebook</a></li>
+            <li><a href="/solutions/b2b-ecommerce-platform/" title="B2B Ecommerce">B2B Ecommerce</a></li>
+          </ul>
+        </div>
+        <div class="col-md mx-auto">
+          <h4 class="footer-nav-heading">Resources</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://www.bigcommerce.com/apps/" title="Apps &amp; Integrations">Apps &amp; Integrations</a></li>
+            <li><a href="https://www.bigcommerce.com/theme-store/" title="Templates &amp; Themes">Templates &amp; Themes</a></li>
+            <li><a href="https://partners.bigcommerce.com/directory/home.aspx" title="Partner Services">Partner Services</a></li>
+            <li><a href="https://www.bigcommerce.com/case-study/" title="Case Studies">Case Studies</a></li>
+            <li><a href="/blog/" title="Bigcommerce Blog">BigCommerce Blog</a></li>
+            <li><a href="/partners/" title="Become a Partner">Become a Partner</a></li>
+            <li><a href="/partners/become-a-partner/affiliate/" title="Become an Affiliate">Become an Affiliate</a></li>
+            <li><a href="/request-a-demo/" title="Request a Demo">Request a Demo</a></li>
+            <li><a href="/essentials/free-trial/" title="Free 15-Day Trial">Free 15-Day Trial</a></li>
+            <li><a href="/ecommerce-answers/" title="Ecommerce Answers">Ecommerce Answers</a></li>
+            <li><a href="/events/" title="Events">Events</a></li>
+          </ul>
+        </div>
+        <div class="col-md mx-auto">
+          <h4 class="footer-nav-heading">Support</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://support.bigcommerce.com/s/community" title="BigCommerce Community">BigCommerce Community</a></li>
+            <li><a href="https://support.bigcommerce.com/s/knowledge" title="Knowledge Base">Knowledge Base</a></li>
+            <li><a href="https://support.bigcommerce.com/s/videos" title="Videos">Videos</a></li>
+            <li><a href="https://support.bigcommerce.com/s/contact" title="Contact Tech Support">Contact Tech Support</a></li>
+            <li><a href="https://developer.bigcommerce.com/" title="Developer Center">Developer Center</a></li>
+            <li><a href="https://support.bigcommerce.com/s/group/0F913000000HLjECAW/bigcommerce-developers" title="Developer Community">Developer Community</a></li>
+            <li><a href="https://developer.bigcommerce.com/api/" title="API Documentation">API Documentation</a></li>
+            <li><a href="https://stencil.bigcommerce.com/docs" title="Theme Documentation">Theme Documentation</a></li>
+          </ul>
+        </div>
+        <div class="col-md mx-auto">
+          <h4 class="footer-nav-heading">Company</h4>
+          <ul class="list-unstyled">
+            <li><a href="/contact/" title="Contact Us">Contact Us</a></li>
+            <li><a href="/press/" title="Press Center">Press Center</a></li>
+            <li><a href="/careers/" title="Careers - we're hiring!">Careers - we're hiring!</a></li>
+            <li><a href="https://investors.bigcommerce.com/" title="Investor Relations">Investor Relations</a></li>
+            <li><a href="http://www.bigcommerce.com/terms/" title="Terms of Service">Terms of Service</a></li>
+            <li><a href="https://www.bigcommerce.com/privacy/" title="Privacy Policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom row">
+        <div class="footer-bottom-copyright col-md-4"><a href="/"><img src="#" class="text-center text-md-left" scale="0"></a>
+          © Snigdho <a href="/">Ecommerce Platform</a>
+        </div>
+        <div class="footer-bottom-social col-md">
+          <ul class="row footer-links list-unstyled">
+            <li class="col-md mx-auto"><a href="http://twitter.com/Bigcommerce" title="Twitter">Twitter</a></li>
+            <li class="col-md mx-auto"><a href="http://www.facebook.com/Bigcommerce" title="Facebook">Facebook</a></li>
+            <li class="col-md mx-auto"><a href="http://www.linkedin.com/company/bigcommerce" title="LinkedIn">LinkedIn</a></li>
+            <li class="col-md mx-auto"><a href="http://www.youtube.com/BigcommerceDotCom" title="YouTube">YouTube</a></li>
+            <li class="col-md mx-auto"><a href="http://pinterest.com/bigcommerce/" title="Pinterest">Pinterest</a></li>
+            <li class="col-md mx-auto"><a href="https://www.instagram.com/bigcommerce/" title="Instagram">Instagram</a></li>
+          </ul>
+        </div>
+        </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <script src="{% static 'js/jqury.min.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/bootstrap.bundle.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/bootstrap.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/my.js' %}" charset="utf-8"></script>
+
+</body>
+
+</html>

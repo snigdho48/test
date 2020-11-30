@@ -1,0 +1,52 @@
+{% extends 'project1/index.html' %}
+{% extends 'project1/base.html' %}
+{% extends 'project1/essential.html' %}
+
+{% load static %}
+
+
+{% block 2ndnav %}
+
+<div class=" mid">
+  <header class="h">
+    <nav class="navbar navbar-expand-lg navbar-light hnav">
+      <div class="col-lg-1">
+
+      </div>
+      <a class="navbar-brand" href="{% url 'index' %}">Images</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav col-lg-8">
+          <li class="nav-item dropdown n1">
+            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Shop
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">p1</a>
+              <a class="dropdown-item" href="#">p2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">p3</a>
+              <a class="dropdown-item" href="#">p4</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item n1">
+            <a class="nav-link" href="{% url 'Blog' %}">Blog</a>
+          </li>
+          <li class="nav-item n1">
+            <a class="nav-link" href="{% url 'Track' %}">Track your order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Signup' %}"><button type="button" class="btn btn-default btn-colour btn-h">Sign up</button></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  </div>
+  {% include 'project1/index.html' %}
+  {% include 'project1/essential.html' %}
+{% endblock 2ndnav %}
