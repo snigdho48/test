@@ -8,5 +8,5 @@ class new1(models.Model):
 
     head = models.CharField(max_length=100, default=None)
     conte = models.TextField(max_length=200, default=None)
-    price = models.IntegerField
+    price = models.IntegerField(default=None)
     image  = models.ImageField(upload_to="static/img" ,default=None)
