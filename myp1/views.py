@@ -1,13 +1,19 @@
 from django.shortcuts import render
+
+from .models import new1
 from django.shortcuts import redirect
 
 # Create your views here.
 
-def index  (request):
- return render(request,'project1/index.html')
+def index(request):
+    mys = new1.objects.all()
+
+    return render(request, 'project1/index.html', {'mys': mys})
+
+
 
 def Blog(request):
- return render(request,'project1/Blog.html')
+    return render(request, 'project1/Blog.html')
 
 def Help(request):
  return render(request,'project1/Help.html')
@@ -15,11 +21,7 @@ def Help(request):
 def Shop(request):
  return render(request,'project1/Shop.html')
 
-def Signin(request):
- return render(request,'project1/Signin.html')
 
-def Signup(request):
- return render(request,'project1/Signup.html')
 
 def Track(request):
  return render(request,'project1/Track-your-order.html')

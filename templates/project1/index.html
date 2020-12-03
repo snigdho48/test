@@ -1,5 +1,6 @@
 {% extends 'project1/base.html' %}
 {% load static %}
+{% static "img" as image %}
 {% block Title %}
 Home
 {% endblock %}
@@ -11,7 +12,18 @@ active
 {% block content %}
 
 
+<style media="screen">
+.carousel
+{
+  position: absolute;
+  top: auto;
 
+}
+.mid
+{
+  margin-bottom: 4%;
+}
+</style>
   <div class=" mid">
     <header class="h">
       <nav class="navbar navbar-expand-lg navbar-light hnav">
@@ -45,7 +57,7 @@ active
               <a class="nav-link" href="{% url 'Track' %}">Track your order</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'Signup' %}"><button type="button" class="btn btn-default btn-colour btn-h">Sign up</button></a>
+              <a class="nav-link" href="accounts/Signup"><button type="button" class="btn btn-default btn-colour btn-h">Sign up</button></a>
             </li>
           </ul>
         </div>
@@ -80,7 +92,7 @@ active
         <span class="sr-only">Next</span>
       </a>
     </div>
-    
+
     <div class="submit-btn">
       <div class="d-flex justify-content-center cont-1">
         <input type="email" name="mail" placeholder="Enter your email" class="s-mail">
@@ -93,6 +105,9 @@ active
   <br><br>
   <!--content!-->
   <div class="content">
+   {% for my in mys  %}
+
+
 
     <div class="row content-1 row-c">
       <div class="col-lg-4 row-lg border-right text">
@@ -100,19 +115,19 @@ active
           Holiday Ideas & Strategies
         </p>
         <h2>
-          <a href="{% url 'cont1' %}">The 2020 BigCommerce Holiday Gift Guide</a>
+          <a href="{% url 'cont1' %}">{{ my.head }}</a>
         </h2>
         <p>
-          Beatriz Estay
+          {{ my.conte }}
           <span class="sep">/</span>
-          7 min read
+          {{ my.price }}
         </p>
         <input type="button" class="btn btn-link">
-        <a class="{% url 'cont1' %}">Read More <span>></span></a>
+        <a class="{% url 'cont1' %}">Read More <span></span></a>
         </input>
       </div>
       <div class="col-lg-8 row-lg ima">
-        <img src="{% static 'img/p4.jpg' %}" class="img-fluid" alt="Responsive image">
+        <img src="{{ my.image.url }}" class="img-fluid" alt="Responsive image">
 
 
 
@@ -120,51 +135,36 @@ active
 
     </div>
 
+
+
+
+
     <div class="row content-3 row-c">
 
 
       <div class="col-lg-8 row-lg ima">
-        <img src="{% static 'img/p5.jpg' %}" class="img-fluid" alt="Responsive image">
+        <img src="{{my.image.url}}" class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-lg-4 row-lg border-left text">
         <p>
           Holiday Ideas & Strategies
         </p>
         <h2>
-          <a href="{% url 'cont1' %}">The 2020 BigCommerce Holiday Gift Guide</a>
+          <a href="{% url 'cont1' %}">{{ my.head }}</a>
         </h2>
         <p>
-          Beatriz Estay
+          {{ my.conte }}
           <span class="sep">/</span>
-          7 min read
+          {{ my.price }}
         </p>
         <input type="button" class="btn btn-link">
-        <a class="{% url 'cont1' %}">Read More <span>></span></a>
+        <a class="{% url 'cont1' %}">Read More <span></span></a>
         </input>
       </div>
     </div>
-    <div class="row content-1 row-c">
-      <div class="col-lg-4 row-lg border-right text">
-        <p>
-          Holiday Ideas & Strategies
-        </p>
-        <h2>
-          <a href="{% url 'cont1' %}">The 2020 BigCommerce Holiday Gift Guide</a>
-        </h2>
-        <p>
-          Beatriz Estay
-          <span class="sep">/</span>
-          7 min read
-        </p>
-        <input type="button" class="btn btn-link">
-        <a class="{% url 'cont1' %}">Read More <span>></span></a>
-        </input>
-      </div>
-      <div class="col-lg-8 row-lg ima">
-        <img src="{% static 'img/p4.jpg' %}" class="img-fluid" alt="Responsive image">
-      </div>
 
-    </div>
+{% endfor %}
+
 
   </div>
 
