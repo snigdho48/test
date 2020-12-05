@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myp1',
     'accounts',
-    
 
 
 
+
+]
+AUTHENTICATION_BACKENDS = [
+     'django.contrib.auth.backends.ModelBackend'
 ]
 
 MIDDLEWARE = [

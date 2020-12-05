@@ -49,7 +49,8 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item last">
-            Hallo {{user.first_name}}
+            Hello {{user.first_name}}
+
           </li>
           <li>
             <a class="nav-link nav-fr" href="{% url 'logout' %}">Sign out</a>
